@@ -207,3 +207,15 @@ ProduceDictionary={
     }
 }
 
+for item, details in ProduceDictionary.items():
+    cost = details['cost']
+    amt_sold = details['amt_sold']
+    stated_total = details['total']
+    
+    calculated_total = round(cost * amt_sold, 2)
+    
+    if calculated_total != stated_total:
+        print(f"{item}")
+        print(f"  Stated Total: ${stated_total}")
+        print(f"  Calculated Total: ${calculated_total}")
+        print()
