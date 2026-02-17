@@ -5,12 +5,18 @@ phonebook = {'Chris':'555−1111',
              'Joanne':'555−3333'}
 
 
-
+'''
 print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
+print(phonebook)
 
+print(len(phonebook))
+
+mydictionary = dict(m=8,n=9)
+
+print(mydictionary)
 
 
 
@@ -19,14 +25,20 @@ print('*****  end section 1 ********')
 print()
 
 
-'''
+
 
 
 print()
 print('*****  start section 2 - search dictionary ********')
 print()
 
+name = 'Chris'
 
+if name in phonebook:
+    phone = phonebook[name]
+    print(phone)
+else:
+    print(f"No phone number for {name}")
 
 
 
@@ -46,7 +58,10 @@ print()
 print('*****  start section 3 - edit/append dictionary ********')
 print()
 
-
+print(phonebook)
+phonebook['Joe'] = '555-0123'
+phonebook['Chris'] = '555-4444'
+print(phonebook)
 
 
 
@@ -74,12 +89,19 @@ print()
 
 
 
-
 print()
 print('*****  start section 5 - iterate through keys, values, items ********')
 print()
 
+for key in phonebook:
+    print(f"The key of the dictionary is {key}")
+    print(f"The value of the key is {phonebook[key]}")
 
+for v in phonebook.values():
+    print(f"Phone number: {v}")
+
+for item in phonebook.items():
+    print(item)
 
 
 
@@ -96,7 +118,12 @@ print()
 print('*****  start section 6 - using get and clear ********')
 print()
 
+phone = phonebook.get('Chris', 'Key not found in dictionary')
+print(phone)
 
+print(phonebook)
+phonebook.clear()
+print(phonebook)
 
 
 
@@ -121,12 +148,14 @@ print('*****  end section 7 ********')
 print()
 
 
-
+'''
 print()
 print('*****  start section 8 - using popitem ********')
 print()
 
-
+item = phonebook.popitem()
+print(item)
+print(phonebook)
 
 
 
@@ -134,7 +163,7 @@ print()
 print()
 print('*****  end section 8 ********')
 print()
-
+'''
 
 
 print()

@@ -17,3 +17,21 @@ Display report for all universities that have a total price for in-state student
 
 """
 
+import json
+infile = open('school_data.json', 'r')
+
+schools = json.load(infile)
+
+conference_schools = [372,108,107,130]
+
+for school in schools:
+    grad_rate = school.get("Graduation rate  women (DRVGR2020)")
+    
+    if grad_rate is not None and grad_rate > 75:
+        print(f"{school.get('instnm')} - {grad_rate}%")
+
+for school in schools:
+    price = school.get("Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)")
+    
+    if price is not None and price > 60000:
+        print(f"{school.get('instnm')} - ${price:,}")
