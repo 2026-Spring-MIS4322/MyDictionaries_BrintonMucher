@@ -77,8 +77,13 @@ print()
 print()
 print('*****  start section 4 - delete/remove from dictionary ********')
 print()
+'''
+print(phonebook)
 
+del phonebook['Katie']
 
+print(phonebook)
+'''
 
 
 print()
@@ -137,7 +142,11 @@ print()
 print()
 print('*****  start section 7 - using pop method ********')
 print()
-
+'''
+removed = phonebook.pop('Joanne', 'Key not found')
+print(f"Removed: {removed}")
+print(phonebook)
+'''
 
 
 
@@ -169,7 +178,14 @@ print()
 print()
 print('*****  start section 9 - using random and converting to list ********')
 print()
+'''
+keys_list = list(phonebook.keys())
 
+random_key = random.choice(keys_list)
+
+print(f"Random person: {random_key}")
+print(f"Phone number: {phonebook[random_key]}")
+'''
 
 
 
