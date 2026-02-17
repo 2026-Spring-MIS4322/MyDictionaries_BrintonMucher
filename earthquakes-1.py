@@ -34,8 +34,23 @@ Latitude: 14.7628
 
 
 import json
-infile = open('eq_data.json','r')
+infile = open('eq_data-1.json','r')
 
 eq_dictionary = json.load(infile)
 
+earthquakes = eq_dictionary["features"]
+print(len(earthquakes))
+
+for quake in earthquakes:
+    magnitude = quake["properties"]["mag"]
+    if magnitude is not None and magnitude > 6.0:
+        location = quake["properties"]["place"]
+        longitude = quake["geometry"]["coordinates"][0]
+        latitude = quake["geometry"]["coordinates"][1]
+
+        print("Location:", location)
+        print("Magnitude:", magnitude)
+        print("Longitude:", longitude)
+        print("Latitude:", latitude)
+        print()
 
